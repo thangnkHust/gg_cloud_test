@@ -1,0 +1,16 @@
+version: '3.3'
+
+networks:
+  default:
+
+services:
+  app:
+    image: asr:1.0
+    volumes:
+      - .:/app
+    container_name: asr
+    command: python3 main.py
+    tty: true
+    restart: always
+    networks:
+      default:
